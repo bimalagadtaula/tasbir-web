@@ -174,21 +174,18 @@ const Home = () => {
           <div className="hero-overlay"></div>
         </div>
         
-        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-playfair font-bold mb-8 creative-text-glow">
-            Visual Stories That 
-            <br />
-            <span className="gradient-text-electric">Transcend Time</span>
+        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-playfair font-bold mb-6 hero-text-glow">
+            Your Story, Captured Forever
           </h1>
-          <p className="text-xl md:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed text-white/90">
-            We are Tasbir—a collective of visual storytellers crafting cinematic experiences 
-            that capture the essence of your most precious moments with unparalleled artistry.
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+            At Tasbir, we turn your most important moments into timeless memories with creativity, care, and artistry.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="lg">
               Book a Shoot
             </Button>
-            <Button variant="outline" size="lg" className="neon-glow bg-background/10 border-primary/30 text-foreground hover:bg-primary hover:text-background">
+            <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary">
               View Our Work
             </Button>
           </div>
@@ -227,94 +224,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Creative Portfolio Gallery */}
-      <section id="portfolio" className="py-20 bg-gradient-to-b from-background via-secondary/10 to-background">
+      {/* Portfolio Highlights */}
+      <section id="portfolio" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-7xl font-playfair font-bold mb-6">
-              Creative <span className="gradient-text-electric">Portfolio</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
+              Portfolio <span className="gradient-text">Highlights</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Each frame tells a story. Every shot captures emotion. 
-              Discover how we transform moments into visual masterpieces.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Discover our work across different photography styles and occasions
             </p>
           </div>
 
-          {/* Featured Project - Large Hero */}
-          <div className="mb-16">
-            <div className="gallery-item group relative h-[70vh] rounded-3xl overflow-hidden">
-              <img 
-                src={galleryWedding} 
-                alt="Featured wedding photography by Tasbir"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              <div className="absolute bottom-12 left-12 text-white max-w-2xl">
-                <div className="text-sm uppercase tracking-wider text-primary mb-2">Featured Project</div>
-                <h3 className="text-4xl md:text-5xl font-playfair font-bold mb-4">Ethereal Wedding Story</h3>
-                <p className="text-xl text-white/90 mb-6">A dreamy celebration of love captured through cinematic storytelling and artistic composition.</p>
-                <Button variant="outline" className="neon-glow bg-background/10 border-primary/30 text-foreground hover:bg-primary">
-                  View Full Story
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Creative Masonry Grid */}
-          <div className="masonry-grid mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioItems.map((item, index) => (
-              <div key={index} className={`masonry-item gallery-item group`}>
-                <div className="relative h-full rounded-2xl overflow-hidden">
+              <div key={index} className="gallery-item group">
+                <div className="relative overflow-hidden rounded-2xl">
                   <img 
                     src={item.image} 
                     alt={`${item.title} photography by Tasbir`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-80 object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="w-12 h-12 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                      <ArrowRight className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-6 left-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                    <div className="text-xs uppercase tracking-wider text-primary mb-1">{item.category}</div>
-                    <h3 className="text-xl font-playfair font-semibold mb-2">{item.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{item.description}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-6 left-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-2xl font-playfair font-semibold mb-2">{item.title}</h3>
+                    <p className="text-white/90">{item.description}</p>
                   </div>
                 </div>
               </div>
             ))}
-            
-            {/* Additional Creative Items */}
-            <div className="masonry-item gallery-item group">
-              <div className="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Camera className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">Your Story Awaits</h3>
-                  <p className="text-muted-foreground mb-4">Ready to create something extraordinary?</p>
-                  <Button variant="outline" size="sm" className="neon-glow">
-                    Start Your Project
-                  </Button>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Portfolio Categories */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {['All', 'Weddings', 'Portraits', 'Events', 'Lifestyle', 'Commercial'].map((category) => (
-              <button
-                key={category}
-                className="px-6 py-3 rounded-full bg-secondary/20 text-muted-foreground hover:bg-primary hover:text-background transition-all duration-300 font-medium"
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button variant="outline" size="lg" className="neon-glow">
-              Explore Full Portfolio
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg">
+              See More Moments
             </Button>
           </div>
         </div>
