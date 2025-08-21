@@ -145,7 +145,7 @@
 
   /* Gallery Hover Effects */
   .gallery-item {
-    @apply relative overflow-hidden rounded-xl transition-all duration-500 group cursor-pointer;
+    @apply relative overflow-hidden rounded-xl transition-all duration-500 cursor-pointer;
   }
 
   .gallery-item::before {
@@ -158,7 +158,11 @@
   }
 
   .gallery-item img {
-    @apply transition-transform duration-500 group-hover:scale-110;
+    @apply transition-transform duration-500;
+  }
+
+  .gallery-item:hover img {
+    @apply scale-110;
   }
 
   /* Button Animations */
