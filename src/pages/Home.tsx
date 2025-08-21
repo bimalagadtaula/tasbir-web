@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ContactForm } from '@/components/ContactForm';
+
 import { 
   Camera, 
   Heart, 
@@ -15,7 +15,11 @@ import {
   Facebook,
   Twitter,
   Menu,
-  X
+  X,
+  MapPin,
+  Mail,
+  Phone,
+  ArrowRight
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -352,39 +356,162 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-b from-background to-secondary/20">
+      {/* Stats Section */}
+      <section className="py-20 bg-foreground text-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-2">
+              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">500+</div>
+              <div className="text-background/80">Happy Clients</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">1000+</div>
+              <div className="text-background/80">Photo Sessions</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">5+</div>
+              <div className="text-background/80">Years Experience</div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">100%</div>
+              <div className="text-background/80">Satisfaction Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Creative Process */}
+      <section className="py-20 bg-gradient-to-b from-secondary/20 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
-              Have an occasion coming up?<br />
-              <span className="gradient-text">Let's make it unforgettable.</span>
+              Our Creative <span className="gradient-text">Process</span>
             </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From consultation to final delivery, we ensure every step is seamless
+            </p>
           </div>
 
-          <ContactForm />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <span className="text-2xl font-playfair font-bold text-primary">01</span>
+                </div>
+                <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
+              </div>
+              <h3 className="text-xl font-playfair font-semibold mb-3">Consultation</h3>
+              <p className="text-muted-foreground">We discuss your vision, style preferences, and unique requirements</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <span className="text-2xl font-playfair font-bold text-primary">02</span>
+                </div>
+                <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
+              </div>
+              <h3 className="text-xl font-playfair font-semibold mb-3">Photo Session</h3>
+              <p className="text-muted-foreground">Professional photography with attention to every detail and emotion</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="mb-6">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <span className="text-2xl font-playfair font-bold text-primary">03</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-playfair font-semibold mb-3">Delivery</h3>
+              <p className="text-muted-foreground">Expertly edited photos delivered in your preferred format</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-12">
+      <footer className="bg-foreground text-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-playfair font-semibold mb-4">Follow our journey</h3>
-            <div className="flex justify-center space-x-6">
-              <a href="#" className="hover:text-primary transition-colors">
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                <Twitter className="w-6 h-6" />
-              </a>
+          {/* Main Footer Content */}
+          <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Brand Section */}
+            <div className="lg:col-span-1">
+              <h3 className="text-3xl font-playfair font-bold text-primary mb-4">Tasbir</h3>
+              <p className="text-background/80 mb-6 leading-relaxed">
+                Professional photography agency capturing life's most precious moments with creativity, care, and artistry.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="#" className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="#" className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300">
+                  <Twitter className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-lg font-playfair font-semibold mb-4">Services</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />Wedding Photography</a></li>
+                <li><a href="#" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />Family Portraits</a></li>
+                <li><a href="#" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />Event Coverage</a></li>
+                <li><a href="#" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />Creative Projects</a></li>
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-playfair font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-3">
+                <li><a href="#about" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />About Us</a></li>
+                <li><a href="#portfolio" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />Portfolio</a></li>
+                <li><a href="#services" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />Our Services</a></li>
+                <li><a href="#" className="text-background/80 hover:text-primary transition-colors flex items-center group"><ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />Pricing</a></li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-lg font-playfair font-semibold mb-4">Get In Touch</h4>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="text-background/80">123 Photography Street</p>
+                    <p className="text-background/80">Creative City, CC 12345</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                  <p className="text-background/80">+1 (555) 123-4567</p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                  <p className="text-background/80">hello@tasbir.com</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="text-center text-background/80">
-            <p>&copy; 2025 Tasbir — Your Story, Our Lens.</p>
+
+          {/* Footer Bottom */}
+          <div className="border-t border-background/20 py-8">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <p className="text-background/60 text-sm">
+                &copy; 2025 Tasbir Photography. All rights reserved.
+              </p>
+              <div className="flex space-x-6 text-sm">
+                <a href="#" className="text-background/60 hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" className="text-background/60 hover:text-primary transition-colors">Terms of Service</a>
+                <a href="#" className="text-background/60 hover:text-primary transition-colors">Cookie Policy</a>
+              </div>
+              <p className="text-background/40 text-sm italic font-playfair">
+                Your Story, Our Lens.
+              </p>
+            </div>
           </div>
         </div>
       </footer>

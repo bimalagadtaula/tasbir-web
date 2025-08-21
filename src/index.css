@@ -179,6 +179,34 @@
     @apply opacity-100 translate-y-0;
   }
 
+  /* Creative Agency Enhancements */
+  .creative-grid-item {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl;
+  }
+
+  .creative-grid-item::before {
+    @apply absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 transition-opacity duration-300 z-10;
+    content: '';
+  }
+
+  .creative-grid-item:hover::before {
+    @apply opacity-100;
+  }
+
+  .parallax-slow {
+    transform: translateY(-20px);
+    transition: transform 0.6s ease-out;
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
   /* Custom Gradients */
   .gradient-text {
     background: var(--gradient-gold);
