@@ -196,31 +196,42 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-b from-background to-secondary/20">
+      <section id="about" className="py-24 section-gradient">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-playfair font-bold text-foreground">
-                About <span className="gradient-text">Tasbir</span>
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                  About Our Agency
+                </div>
+                <h2 className="text-5xl md:text-6xl font-playfair font-bold text-foreground leading-tight">
+                  About <span className="gradient-text">Tasbir</span>
+                </h2>
+              </div>
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 We are Tasbir, a customer-focused photography agency dedicated to capturing life's special moments. 
                 From weddings and family portraits to birthdays and lifestyle shoots, our team ensures every detail 
                 is beautifully preserved, so you can relive your memories again and again.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed opacity-90">
                 Our passion lies in storytelling through imagery, creating not just photographs, but emotional 
                 keepsakes that transport you back to those precious moments for years to come.
               </p>
-              <Button variant="elegant" size="lg">
-                Meet Our Team
-              </Button>
+              <div className="flex gap-4">
+                <Button variant="elegant" size="lg" className="shadow-soft">
+                  Meet Our Team
+                </Button>
+                <Button variant="outline" size="lg" className="border-muted hover:border-primary">
+                  Our Story
+                </Button>
+              </div>
             </div>
             <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-xl opacity-30"></div>
               <img 
                 src={aboutImage} 
                 alt="Professional photographers at work" 
-                className="rounded-2xl shadow-elegant w-full"
+                className="relative rounded-2xl shadow-elegant w-full hover:shadow-glow transition-all duration-500"
               />
             </div>
           </div>
@@ -321,30 +332,38 @@ const Home = () => {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-20 bg-secondary/30">
+      <section id="services" className="py-24 section-alt">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
+              What We Offer
+            </div>
+            <h2 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
               Our <span className="gradient-text">Services</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Professional photography services tailored to your unique needs
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Professional photography services tailored to your unique needs and vision
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
+              <Card key={index} className="professional-card group">
+                <CardContent className="p-10">
+                  <div className="flex items-start space-x-6">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <service.icon className="w-6 h-6 text-primary" />
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110">
+                        <service.icon className="w-8 h-8 text-primary" />
                       </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-playfair font-semibold mb-2">{service.title}</h3>
-                      <p className="text-muted-foreground">{service.description}</p>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-playfair font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">{service.title}</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed">{service.description}</p>
+                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10">
+                          Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -378,16 +397,33 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-24 section-alt">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <Star className="w-8 h-8 text-primary mx-auto mb-4" />
-              <blockquote className="text-2xl md:text-3xl font-playfair italic text-foreground mb-6">
-                "Professional, friendly, and creative. Our family portraits turned out better than we imagined."
-              </blockquote>
-              <p className="text-lg text-muted-foreground">— Jane Doe</p>
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
+              Client Love
             </div>
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
+              What Our Clients <span className="gradient-text">Say</span>
+            </h2>
+          </div>
+          
+          <div className="max-w-5xl mx-auto">
+            <Card className="professional-card text-center">
+              <CardContent className="p-12">
+                <div className="flex justify-center mb-6">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-6 h-6 text-primary fill-current" />
+                  ))}
+                </div>
+                <blockquote className="text-3xl md:text-4xl font-playfair italic text-foreground mb-8 leading-relaxed">
+                  "Professional, friendly, and creative. Our family portraits turned out better than we imagined. 
+                  The attention to detail and artistic vision exceeded all expectations."
+                </blockquote>
+                <div className="text-xl text-muted-foreground mb-2">Jane & Michael Doe</div>
+                <div className="text-lg text-primary">Family Portrait Session</div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -414,24 +450,32 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-foreground text-background">
+      <section className="py-24 bg-gradient-to-r from-primary/95 via-accent/95 to-primary/95">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">500+</div>
-              <div className="text-background/80">Happy Clients</div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+              Trusted by Thousands
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Our commitment to excellence speaks through our results
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div className="space-y-4">
+              <div className="text-5xl md:text-6xl font-playfair font-bold text-white">500+</div>
+              <div className="text-white/90 text-lg font-medium">Happy Clients</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">1000+</div>
-              <div className="text-background/80">Photo Sessions</div>
+            <div className="space-y-4">
+              <div className="text-5xl md:text-6xl font-playfair font-bold text-white">1000+</div>
+              <div className="text-white/90 text-lg font-medium">Photo Sessions</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">5+</div>
-              <div className="text-background/80">Years Experience</div>
+            <div className="space-y-4">
+              <div className="text-5xl md:text-6xl font-playfair font-bold text-white">5+</div>
+              <div className="text-white/90 text-lg font-medium">Years Experience</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-playfair font-bold text-primary">100%</div>
-              <div className="text-background/80">Satisfaction Rate</div>
+            <div className="space-y-4">
+              <div className="text-5xl md:text-6xl font-playfair font-bold text-white">100%</div>
+              <div className="text-white/90 text-lg font-medium">Satisfaction Rate</div>
             </div>
           </div>
         </div>

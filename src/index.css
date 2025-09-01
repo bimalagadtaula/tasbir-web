@@ -7,32 +7,32 @@
 /* Tasbir Photography - Elegant Design System */
 @layer base {
   :root {
-    /* Creative Agency Colors - Dark & Sophisticated */
-    --background: 220 15% 7%;
-    --foreground: 210 20% 98%;
+    /* Enhanced Photography Agency Colors */
+    --background: 216 19% 8%;
+    --foreground: 210 25% 96%;
 
-    --card: 220 13% 9%;
-    --card-foreground: 210 20% 98%;
+    --card: 218 15% 12%;
+    --card-foreground: 210 25% 96%;
 
-    --popover: 220 13% 9%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 218 15% 12%;
+    --popover-foreground: 210 25% 96%;
 
-    /* Primary: Electric Coral */
-    --primary: 14 100% 65%;
-    --primary-foreground: 210 20% 98%;
-    --primary-glow: 14 100% 75%;
+    /* Primary: Sophisticated Coral */
+    --primary: 14 85% 62%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 14 90% 70%;
 
-    /* Secondary: Deep Charcoal */
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 210 20% 98%;
+    /* Secondary: Professional Charcoal */
+    --secondary: 215 20% 22%;
+    --secondary-foreground: 210 25% 96%;
 
-    /* Muted: Cool Gray */
-    --muted: 215 16% 47%;
-    --muted-foreground: 215 10% 71%;
+    /* Muted: Elegant Gray */
+    --muted: 216 14% 40%;
+    --muted-foreground: 216 12% 75%;
 
-    /* Accent: Vibrant Cyan */
-    --accent: 199 89% 48%;
-    --accent-foreground: 210 20% 98%;
+    /* Accent: Premium Cyan */
+    --accent: 195 85% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 28 20% 98%;
@@ -41,25 +41,27 @@
     --input: 215 27% 32%;
     --ring: 14 100% 65%;
 
-    /* Creative Agency Design Tokens */
-    --electric-coral: 14 100% 65%;
-    --vibrant-cyan: 199 89% 48%;
-    --deep-charcoal: 215 25% 27%;
-    --midnight-blue: 220 15% 7%;
-    --neon-green: 120 100% 50%;
-    --purple-accent: 270 95% 65%;
+    /* Enhanced Design Tokens */
+    --electric-coral: 14 85% 62%;
+    --vibrant-cyan: 195 85% 52%;
+    --deep-charcoal: 215 20% 22%;
+    --midnight-blue: 216 19% 8%;
+    --premium-gold: 45 100% 70%;
+    --elegant-purple: 260 80% 65%;
     
-    /* Creative Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 15% 7% / 0.95), hsl(215 25% 27% / 0.8));
-    --gradient-primary: linear-gradient(135deg, hsl(14 100% 65%), hsl(199 89% 48%));
-    --gradient-electric: linear-gradient(45deg, hsl(14 100% 65%), hsl(270 95% 65%), hsl(199 89% 48%));
-    --gradient-creative: linear-gradient(180deg, hsl(220 15% 7%), hsl(215 25% 27%));
+    /* Sophisticated Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(216 19% 8% / 0.97), hsl(215 20% 22% / 0.85));
+    --gradient-primary: linear-gradient(135deg, hsl(14 85% 62%), hsl(195 85% 52%));
+    --gradient-electric: linear-gradient(45deg, hsl(14 85% 62%), hsl(260 80% 65%), hsl(195 85% 52%));
+    --gradient-creative: linear-gradient(180deg, hsl(216 19% 8%), hsl(215 20% 22%));
+    --gradient-section: linear-gradient(180deg, hsl(216 19% 8%), hsl(218 15% 12%));
     
-    /* Professional Shadows */
-    --shadow-soft: 0 4px 20px hsl(14 100% 65% / 0.2);
-    --shadow-elegant: 0 20px 60px hsl(220 15% 7% / 0.4);
-    --shadow-glow: 0 0 60px hsl(14 100% 65% / 0.3);
-    --shadow-neon: 0 0 30px hsl(199 89% 48% / 0.5);
+    /* Professional Shadows with Better Contrast */
+    --shadow-soft: 0 8px 32px hsl(14 85% 62% / 0.15);
+    --shadow-elegant: 0 16px 64px hsl(216 19% 8% / 0.6);
+    --shadow-glow: 0 0 48px hsl(14 85% 62% / 0.25);
+    --shadow-neon: 0 0 32px hsl(195 85% 52% / 0.4);
+    --shadow-card: 0 4px 24px hsl(216 19% 8% / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,13 +141,14 @@
 }
 
 @layer components {
-  /* Creative Agency Hero Styles */
+  /* Enhanced Hero Styles */
   .hero-overlay {
     background: var(--gradient-hero);
+    backdrop-filter: blur(2px);
   }
 
   .hero-text-glow {
-    text-shadow: 0 0 30px hsl(var(--primary) / 0.5), 0 0 60px hsl(var(--primary) / 0.3);
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.4), 0 0 80px hsl(var(--primary) / 0.2);
   }
 
   .creative-text-glow {
@@ -153,7 +156,13 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.5));
+    filter: drop-shadow(0 0 24px hsl(var(--primary) / 0.4));
+    animation: subtle-glow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes subtle-glow {
+    from { filter: drop-shadow(0 0 24px hsl(var(--primary) / 0.4)); }
+    to { filter: drop-shadow(0 0 32px hsl(var(--primary) / 0.6)); }
   }
 
   /* Creative Gallery Effects */
@@ -282,14 +291,40 @@
     @apply bg-background rounded-lg;
   }
 
-  /* Neon glow effects */
+  /* Enhanced glow effects */
   .neon-glow {
-    box-shadow: var(--shadow-glow);
-    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .neon-glow:hover {
-    box-shadow: var(--shadow-neon), var(--shadow-glow);
-    border-color: hsl(var(--accent) / 0.6);
+    box-shadow: var(--shadow-glow), var(--shadow-soft);
+    border-color: hsl(var(--accent) / 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Professional card effects */
+  .professional-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .professional-card:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  /* Improved section backgrounds */
+  .section-gradient {
+    background: var(--gradient-section);
+  }
+
+  .section-alt {
+    background: hsl(var(--secondary) / 0.3);
+    backdrop-filter: blur(10px);
   }
 }
