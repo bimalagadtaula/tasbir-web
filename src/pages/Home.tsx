@@ -164,33 +164,77 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Enhanced Overlay */}
         <div className="absolute inset-0">
           <img 
             src={heroImage} 
             alt="Beautiful wedding photography by Tasbir" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-105 transition-transform duration-[20s] hover:scale-100"
           />
-          <div className="hero-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-midnight-blue/90 via-deep-charcoal/80 to-midnight-blue/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         </div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent/40 rounded-full animate-ping"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-primary/20 rounded-full animate-bounce"></div>
         
-        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-playfair font-bold mb-8 creative-text-glow">
-            Visual Stories That 
-            <br />
-            <span className="gradient-text-electric">Transcend Time</span>
+        {/* Main Content */}
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          {/* Premium Badge */}
+          <div className="inline-flex items-center px-6 py-3 mb-8 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white/90 text-sm font-medium">
+            <Camera className="w-4 h-4 mr-2 text-primary" />
+            Premium Photography Studio
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-playfair font-bold mb-8 leading-tight">
+            <span className="block text-white hero-text-glow">Visual Stories</span>
+            <span className="block creative-text-glow">That Transcend</span>
+            <span className="block gradient-text-electric">Time</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed text-white/90">
-            We are Tasbir—a collective of visual storytellers crafting cinematic experiences 
-            that capture the essence of your most precious moments with unparalleled artistry.
+
+          {/* Subtitle */}
+          <p className="text-lg sm:text-xl lg:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-white/85 font-light">
+            We are <span className="text-primary font-semibold">Tasbir</span>—a collective of visual storytellers crafting cinematic experiences 
+            that capture the essence of your most precious moments with unparalleled artistry and emotional depth.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg">
-              Book a Shoot
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <Button variant="hero" size="lg" className="text-lg px-12 py-4 h-auto shadow-glow">
+              <Camera className="w-5 h-5 mr-2" />
+              Book Your Session
             </Button>
-            <Button variant="outline" size="lg" className="neon-glow bg-background/10 border-primary/30 text-foreground hover:bg-primary hover:text-background">
-              View Our Work
+            <Button variant="outline" size="lg" className="text-lg px-12 py-4 h-auto bg-white/5 border-white/30 text-white hover:bg-white hover:text-background backdrop-blur-sm">
+              <ArrowRight className="w-5 h-5 mr-2" />
+              Explore Portfolio
             </Button>
+          </div>
+
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center items-center gap-8 text-white/60 text-sm">
+            <div className="flex items-center">
+              <Star className="w-4 h-4 text-primary mr-2 fill-current" />
+              <span>5-Star Rated Studio</span>
+            </div>
+            <div className="flex items-center">
+              <Award className="w-4 h-4 text-accent mr-2" />
+              <span>Award-Winning Team</span>
+            </div>
+            <div className="flex items-center">
+              <Users className="w-4 h-4 text-primary mr-2" />
+              <span>500+ Happy Clients</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
