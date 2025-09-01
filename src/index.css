@@ -7,64 +7,61 @@
 /* Tasbir Photography - Elegant Design System */
 @layer base {
   :root {
-    /* Enhanced Photography Agency Colors */
-    --background: 216 19% 8%;
-    --foreground: 210 25% 96%;
+    /* Tasbir Photography - Clean White Theme */
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
 
-    --card: 218 15% 12%;
-    --card-foreground: 210 25% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
 
-    --popover: 218 15% 12%;
-    --popover-foreground: 210 25% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
 
-    /* Primary: Sophisticated Coral */
-    --primary: 14 85% 62%;
+    /* Primary: Photography Gold */
+    --primary: 45 93% 47%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 14 90% 70%;
+    --primary-glow: 45 93% 55%;
 
-    /* Secondary: Professional Charcoal */
-    --secondary: 215 20% 22%;
-    --secondary-foreground: 210 25% 96%;
+    /* Secondary: Professional Slate */
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 222 84% 5%;
 
     /* Muted: Elegant Gray */
-    --muted: 216 14% 40%;
-    --muted-foreground: 216 12% 75%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    /* Accent: Premium Cyan */
-    --accent: 195 85% 52%;
+    /* Accent: Premium Navy */
+    --accent: 222 84% 5%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 28 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 27% 32%;
-    --input: 215 27% 32%;
-    --ring: 14 100% 65%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 45 93% 47%;
 
-    /* Enhanced Design Tokens */
-    --electric-coral: 14 85% 62%;
-    --vibrant-cyan: 195 85% 52%;
-    --deep-charcoal: 215 20% 22%;
-    --midnight-blue: 216 19% 8%;
-    --premium-gold: 45 100% 70%;
-    --elegant-purple: 260 80% 65%;
-    --hero-accent: 280 100% 85%;
-    --hero-secondary: 340 100% 80%;
+    /* Enhanced Design Tokens - Light Theme */
+    --photography-gold: 45 93% 47%;
+    --premium-navy: 222 84% 5%;
+    --elegant-slate: 215 16% 47%;
+    --warm-gray: 20 14% 95%;
+    --accent-gold: 45 93% 55%;
+    --soft-shadow: 220 13% 91%;
     
-    /* Sophisticated Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(216 19% 8% / 0.97), hsl(215 20% 22% / 0.85));
-    --gradient-primary: linear-gradient(135deg, hsl(14 85% 62%), hsl(195 85% 52%));
-    --gradient-electric: linear-gradient(90deg, hsl(14 85% 62%) 0%, hsl(340 100% 80%) 25%, hsl(280 100% 85%) 50%, hsl(260 80% 65%) 75%, hsl(195 85% 52%) 100%);
-    --gradient-creative: linear-gradient(180deg, hsl(216 19% 8%), hsl(215 20% 22%));
-    --gradient-section: linear-gradient(180deg, hsl(216 19% 8%), hsl(218 15% 12%));
-    --gradient-hero-text: linear-gradient(135deg, hsl(14 85% 62%), hsl(280 100% 85%), hsl(195 85% 52%));
+    /* Clean Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(45 93% 47% / 0.05), hsl(222 84% 5% / 0.02));
+    --gradient-primary: linear-gradient(135deg, hsl(45 93% 47%), hsl(45 93% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(222 84% 5%), hsl(215 16% 47%));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 99%));
     
-    /* Professional Shadows with Better Contrast */
-    --shadow-soft: 0 8px 32px hsl(14 85% 62% / 0.15);
-    --shadow-elegant: 0 16px 64px hsl(216 19% 8% / 0.6);
-    --shadow-glow: 0 0 48px hsl(14 85% 62% / 0.25);
-    --shadow-neon: 0 0 32px hsl(195 85% 52% / 0.4);
-    --shadow-card: 0 4px 24px hsl(216 19% 8% / 0.3);
+    /* Professional Light Shadows */
+    --shadow-soft: 0 2px 8px hsl(222 84% 5% / 0.08);
+    --shadow-elegant: 0 8px 32px hsl(222 84% 5% / 0.12);
+    --shadow-glow: 0 0 24px hsl(45 93% 47% / 0.2);
+    --shadow-card: 0 1px 3px hsl(222 84% 5% / 0.05);
+    --shadow-hover: 0 4px 16px hsl(222 84% 5% / 0.1);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,42 +87,26 @@
   }
 
   .dark {
-    /* Keep same as light mode for consistent dark theme */
-    --background: 220 15% 7%;
-    --foreground: 210 20% 98%;
-
-    --card: 220 13% 9%;
-    --card-foreground: 210 20% 98%;
-
-    --popover: 220 13% 9%;
-    --popover-foreground: 210 20% 98%;
-
-    --primary: 14 100% 65%;
-    --primary-foreground: 210 20% 98%;
-
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 210 20% 98%;
-
-    --muted: 215 16% 47%;
-    --muted-foreground: 215 10% 71%;
-
-    --accent: 199 89% 48%;
-    --accent-foreground: 210 20% 98%;
-
+    /* Override for dark theme if needed */
+    --background: 222 84% 5%;
+    --foreground: 0 0% 100%;
+    --card: 222 84% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 93% 47%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 215 16% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 16% 25%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 222 84% 5%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 215 27% 32%;
-    --input: 215 27% 32%;
-    --ring: 14 100% 65%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 16% 25%;
+    --input: 215 16% 25%;
+    --ring: 45 93% 47%;
   }
 }
 
@@ -291,7 +272,7 @@
     50% { transform: translateY(-10px); }
   }
 
-  /* Creative Agency Gradients */
+  /* Light Theme Gradients and Effects */
   .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -299,43 +280,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  .gradient-text-electric {
-    background: var(--gradient-electric);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-shift 3s ease-in-out infinite;
-  }
-
-  @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  .gradient-border {
-    background: var(--gradient-primary);
-    padding: 2px;
-    border-radius: 1rem;
-  }
-
-  .gradient-border > * {
-    @apply bg-background rounded-lg;
-  }
-
-  /* Enhanced glow effects */
-  .neon-glow {
-    box-shadow: var(--shadow-soft);
-    border: 1px solid hsl(var(--primary) / 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .neon-glow:hover {
-    box-shadow: var(--shadow-glow), var(--shadow-soft);
-    border-color: hsl(var(--accent) / 0.5);
-    transform: translateY(-2px);
-  }
-
-  /* Professional card effects */
+  /* Professional Light Card Effects */
   .professional-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
@@ -344,18 +289,22 @@
   }
 
   .professional-card:hover {
-    box-shadow: var(--shadow-elegant);
-    transform: translateY(-4px);
-    border-color: hsl(var(--primary) / 0.3);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    border-color: hsl(var(--primary) / 0.2);
   }
 
-  /* Improved section backgrounds */
+  /* Clean Section Backgrounds */
   .section-gradient {
     background: var(--gradient-section);
   }
 
   .section-alt {
-    background: hsl(var(--secondary) / 0.3);
-    backdrop-filter: blur(10px);
+    background: hsl(var(--secondary) / 0.5);
+  }
+
+  /* Light hover effects */
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
   }
 }

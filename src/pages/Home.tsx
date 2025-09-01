@@ -106,12 +106,15 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md z-50 border-b border-border">
+      <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md z-50 border-b border-border shadow-soft">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <h1 className="text-2xl font-playfair font-bold gradient-text">Tasbir</h1>
+            <div className="flex-shrink-0 flex items-center">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                <Camera className="w-4 h-4 text-primary-foreground" />
+              </div>
+              <h1 className="text-2xl font-playfair font-bold text-foreground">TASBIR</h1>
             </div>
 
             {/* Desktop Navigation */}
@@ -127,7 +130,7 @@ const Home = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button variant="hero" size="sm">
+              <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90">
                 Book a Shoot
               </Button>
             </div>
@@ -153,7 +156,7 @@ const Home = () => {
                 <a href="#about" className="block px-3 py-2 text-foreground hover:text-primary">About</a>
                 <a href="#contact" className="block px-3 py-2 text-foreground hover:text-primary">Contact</a>
                 <div className="px-3 py-2">
-                  <Button variant="hero" size="sm" className="w-full">
+                  <Button variant="default" size="sm" className="w-full bg-primary hover:bg-primary/90">
                     Book a Shoot
                   </Button>
                 </div>
@@ -164,64 +167,73 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Enhanced Overlay */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-secondary/20 to-background">
+        {/* Background Image with Clean Overlay */}
         <div className="absolute inset-0">
           <img 
             src={heroImage} 
             alt="Beautiful wedding photography by Tasbir" 
-            className="w-full h-full object-cover scale-105 transition-transform duration-[20s] hover:scale-100"
+            className="w-full h-full object-cover opacity-15 scale-105 transition-transform duration-[20s] hover:scale-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-midnight-blue/90 via-deep-charcoal/80 to-midnight-blue/95"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95"></div>
         </div>
 
-        {/* Floating Elements */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent/40 rounded-full animate-ping"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-primary/20 rounded-full animate-bounce"></div>
+        {/* Brand Logo */}
+        <div className="absolute top-8 left-8 z-20">
+          <div className="flex items-center">
+            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-3">
+              <Camera className="w-6 h-6 text-primary-foreground" />
+            </div>
+            <h1 className="text-2xl font-playfair font-bold text-foreground">TASBIR</h1>
+          </div>
+        </div>
+
+        {/* Floating Elements - Subtle */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/20 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent/30 rounded-full animate-ping"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-primary/10 rounded-full animate-bounce"></div>
         
         {/* Main Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           {/* Premium Badge */}
-          <div className="inline-flex items-center px-6 py-3 mb-8 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white/90 text-sm font-medium">
+          <div className="inline-flex items-center px-6 py-3 mb-8 bg-secondary/50 backdrop-blur-md rounded-full border border-border text-foreground text-sm font-medium">
             <Camera className="w-4 h-4 mr-2 text-primary" />
             Premium Photography Studio
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-playfair font-bold mb-8 leading-tight">
-            <span className="block text-white hero-text-glow">Visual Stories</span>
-            <span className="block creative-text-glow">That Transcend</span>
-            <span className="block gradient-text-electric">Time</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold mb-8 leading-tight">
+            <span className="block text-foreground mb-2">Capturing Life's</span>
+            <span className="block gradient-text mb-2">Most Beautiful</span>
+            <span className="block text-accent">Moments</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl lg:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-white/85 font-light">
-            We are <span className="text-primary font-semibold">Tasbir</span>—a collective of visual storytellers crafting cinematic experiences 
-            that capture the essence of your most precious moments with unparalleled artistry and emotional depth.
+          <p className="text-lg sm:text-xl lg:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed text-muted-foreground font-light">
+            We are <span className="text-primary font-semibold">Tasbir</span>—professional photographers dedicated to capturing 
+            your precious moments with artistic excellence and emotional storytelling.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <Button variant="hero" size="lg" className="text-lg px-12 py-4 h-auto shadow-glow">
+            <Button variant="default" size="lg" className="text-lg px-12 py-4 h-auto shadow-hover bg-primary hover:bg-primary/90">
               <Camera className="w-5 h-5 mr-2" />
               Book Your Session
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-12 py-4 h-auto bg-white/5 border-white/30 text-white hover:bg-white hover:text-background backdrop-blur-sm">
+            <Button variant="outline" size="lg" className="text-lg px-12 py-4 h-auto border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               <ArrowRight className="w-5 h-5 mr-2" />
-              Explore Portfolio
+              View Portfolio
             </Button>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center items-center gap-8 text-white/60 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-muted-foreground text-sm">
             <div className="flex items-center">
               <Star className="w-4 h-4 text-primary mr-2 fill-current" />
               <span>5-Star Rated Studio</span>
             </div>
             <div className="flex items-center">
-              <Award className="w-4 h-4 text-accent mr-2" />
+              <Award className="w-4 h-4 text-primary mr-2" />
               <span>Award-Winning Team</span>
             </div>
             <div className="flex items-center">
@@ -233,8 +245,8 @@ const Home = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-6 h-10 border-2 border-muted-foreground/40 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
@@ -282,85 +294,60 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Creative Portfolio Gallery */}
-      <section id="portfolio" className="py-20 bg-gradient-to-b from-background via-secondary/10 to-background">
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-24 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-7xl font-playfair font-bold mb-6">
-              Creative <span className="gradient-text-electric">Portfolio</span>
+            <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
+              Our Work
+            </div>
+            <h2 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
+              Featured <span className="gradient-text">Portfolio</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Each frame tells a story. Every shot captures emotion. 
-              Discover how we transform moments into visual masterpieces.
+              Every photograph tells a unique story. Explore our collection of memorable moments 
+              captured with precision and artistry.
             </p>
           </div>
 
-          {/* Featured Project - Large Hero */}
-          <div className="mb-16">
-            <div className="gallery-item group relative h-[70vh] rounded-3xl overflow-hidden">
-              <img 
-                src={galleryWedding} 
-                alt="Featured wedding photography by Tasbir"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              <div className="absolute bottom-12 left-12 text-white max-w-2xl">
-                <div className="text-sm uppercase tracking-wider text-primary mb-2">Featured Project</div>
-                <h3 className="text-4xl md:text-5xl font-playfair font-bold mb-4">Ethereal Wedding Story</h3>
-                <p className="text-xl text-white/90 mb-6">A dreamy celebration of love captured through cinematic storytelling and artistic composition.</p>
-                <Button variant="outline" className="neon-glow bg-background/10 border-primary/30 text-foreground hover:bg-primary">
-                  View Full Story
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Creative Masonry Grid */}
-          <div className="masonry-grid mb-16">
+          {/* Portfolio Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {portfolioItems.map((item, index) => (
-              <div key={index} className={`masonry-item gallery-item group`}>
-                <div className="relative h-full rounded-2xl overflow-hidden">
-                  <img 
-                    src={item.image} 
-                    alt={`${item.title} photography by Tasbir`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="w-12 h-12 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center">
-                      <ArrowRight className="w-6 h-6 text-primary" />
-                    </div>
+              <div key={index} className="group cursor-pointer">
+                <div className="relative overflow-hidden rounded-2xl bg-card shadow-soft hover:shadow-hover transition-all duration-500">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={`${item.title} photography by Tasbir`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
                   </div>
-                  <div className="absolute bottom-6 left-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                    <div className="text-xs uppercase tracking-wider text-primary mb-1">{item.category}</div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    <div className="text-xs uppercase tracking-wider text-primary mb-2">{item.category}</div>
                     <h3 className="text-xl font-playfair font-semibold mb-2">{item.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-white/90 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">{item.description}</p>
+                  </div>
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center">
+                      <ArrowRight className="w-5 h-5 text-white" />
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
-            
-            {/* Additional Creative Items */}
-            <div className="masonry-item gallery-item group">
-              <div className="relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Camera className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">Your Story Awaits</h3>
-                  <p className="text-muted-foreground mb-4">Ready to create something extraordinary?</p>
-                  <Button variant="outline" size="sm" className="neon-glow">
-                    Start Your Project
-                  </Button>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Portfolio Categories */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {['All', 'Weddings', 'Portraits', 'Events', 'Lifestyle', 'Commercial'].map((category) => (
+            {['All Work', 'Weddings', 'Portraits', 'Events', 'Lifestyle'].map((category, index) => (
               <button
                 key={category}
-                className="px-6 py-3 rounded-full bg-secondary/20 text-muted-foreground hover:bg-primary hover:text-background transition-all duration-300 font-medium"
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  index === 0 
+                    ? 'bg-primary text-primary-foreground shadow-soft' 
+                    : 'bg-secondary text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:shadow-soft'
+                }`}
               >
                 {category}
               </button>
@@ -368,8 +355,8 @@ const Home = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="outline" size="lg" className="neon-glow">
-              Explore Full Portfolio
+            <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              View Complete Portfolio
             </Button>
           </div>
         </div>
