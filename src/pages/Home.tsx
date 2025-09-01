@@ -190,7 +190,7 @@ const Home = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-playfair font-bold mb-8 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold mb-8 leading-tight">
             <span className="block text-white hero-text-glow">Visual Stories</span>
             <span className="block creative-text-glow">That Transcend</span>
             <span className="block gradient-text-electric">Time</span>
