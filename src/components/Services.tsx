@@ -76,42 +76,62 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="elegant" className="w-full group">
+                  {/* <Button variant="elegant" className="w-full group">
                     <Camera className="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
                     Learn More
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}
           </div>
 
           {/* Process */}
-          <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-12 text-foreground">Our Simple Process</h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-primary">1</span>
+           <section className="py-20 bg-gradient-to-b from-secondary/20 to-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-4">
+              Our Creative <span className="gradient-text">Process</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From consultation to final delivery, we ensure every step is seamless
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <span className="text-2xl font-playfair font-bold text-primary">01</span>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground">Consultation</h4>
-                <p className="text-muted-foreground">We discuss your vision, preferences, and requirements</p>
+                <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
               </div>
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-2xl font-bold text-primary">2</span>
+              <h3 className="text-xl font-playfair font-semibold mb-3">Consultation</h3>
+              <p className="text-muted-foreground">We discuss your vision, style preferences, and unique requirements</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <span className="text-2xl font-playfair font-bold text-primary">02</span>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground">Photography</h4>
-                <p className="text-muted-foreground">Professional shoot with our experienced team</p>
+                <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-primary/50 to-transparent"></div>
               </div>
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <Clock className="h-8 w-8 text-primary" />
+              <h3 className="text-xl font-playfair font-semibold mb-3">Photo Session</h3>
+              <p className="text-muted-foreground">Professional photography with attention to every detail and emotion</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="mb-6">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                  <span className="text-2xl font-playfair font-bold text-primary">03</span>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground">Delivery</h4>
-                <p className="text-muted-foreground">Edited photos delivered within 2-3 weeks</p>
               </div>
+              <h3 className="text-xl font-playfair font-semibold mb-3">Delivery</h3>
+              <p className="text-muted-foreground">Expertly edited photos delivered in your preferred format</p>
             </div>
           </div>
+        </div>
+      </section>
         </div>
       </div>
     </section>
